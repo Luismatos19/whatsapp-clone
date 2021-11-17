@@ -11,14 +11,17 @@ import "./style.scss";
 import axios from "axios";
 import { Contato } from "../../models/contato";
 
-export const Contatos = () => {
+export const Contatos = ({idContato =(item:number) => {}}) => {
   const [contatos, setContatos] = useState<Contato[]>([]);
+  
 
   useEffect(() => {
     axios.get("http://localhost:3000/contato").then((res) => {
       setContatos(res.data);
     });
   }, []);
+
+  
 
   return (
     <>
@@ -42,11 +45,14 @@ export const Contatos = () => {
             <p>Ativar notificações na área de trabalho </p>
           </div>
         </div>
+        <div className="contatos__pesquisar">
+          <input type="text" placeholder="Pesquisar ou começar uma nova conversa"/>
+        </div>
         <div className="contatos__list list">
-          {contatos.map((item, id) => (
-            <div className="list__item">
+          {contatos.map((item) => (
+            <div className="list__item" onClick={() =>{idContato(item.id)}}>
               <img src={item.imagemUrl} alt="contato foto" />
-              <p key={id}>{item.nome}</p>
+              <p key={item.nome}>{item.nome}</p>
             </div>
           ))}
         </div>
