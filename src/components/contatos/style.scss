@@ -3,66 +3,91 @@ $blue-baby: #9de1fe;
 $grey: #ededed;
 
 .contatos {
-    margin-top: -7.8em;
-    width: 25em;
-    background-color: $white;
-    height: 800px;
+  
+  width: 35%;
+  background-color: $white;
+  height: 800px;
 
-    &__header{
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7em;
+    background-color: $grey;
+  }
+
+  &__img {
+    img {
+      width: 3em;
+      height: 3em;
+      border-radius: 50%;
+      margin-left: 1em;
+    }
+  }
+
+  &__options {
+    display: flex;
+  }
+
+  &__options > * {
+    margin-right: 0.8em;
+  }
+
+  &__notificacao {
+    display: flex;
+    background-color: $blue-baby;
+    align-items: center;
+
+    .notificacao {
+      &__img {
+        background-color: $white;
+        width: 3em;
+        height: 3em;
+        border-radius: 50%;
         display: flex;
-        justify-content: space-between;
-        padding-top: 1em;
-        background-color: $grey;
-    }
-
-    &__img{
-        
-        img {
-            width: 3em;
-            height: 3em;
-            border-radius: 50%;
-            margin-left: 1em;
-        }
-    }
-
-    &__options{
-        display: flex;
-           
-    }
-
-    &__options > * {
-        margin-right: 0.8em;
-           
-    }
-
-    &__notificacao {
-        display: flex;
-        background-color: $blue-baby;
+        justify-content: center;
         align-items: center;
+        margin-left: 1em;
+      }
 
-        .notificacao{
-            
+      &__texto {
+        margin-left: 1em;
 
-            &__img{
-                background-color: $white;
-                width: 3em;
-                height: 3em;
-                border-radius: 50%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin-left: 1em;
-            }
-
-            &__texto {
-                margin-left: 1em;
-
-                p:nth-of-type(2){
-                    font-size: small;
-                }
-            }
+        p:nth-of-type(2) {
+          font-size: small;
         }
+      }
     }
+  }
 
+  &__pesquisar{
+      display: flex;
+      padding: 0.5em;
+      justify-content: center;
+      background-color: $grey;
+      input {
+          border: none;
+          width: 90%;
+          height: 2em;
+          border-radius: 15px;
+      }
+  }
 
+  &__list {
+    .list {
+      &__item {
+        display: flex;
+        justify-content: flex-start;
+        padding: 1em;
+        border-bottom: 2px solid $grey;
+        cursor: pointer;
+        img {
+          width: 3em;
+          height: 3em;
+          border-radius: 50%;
+          margin-right: 1em;
+        }
+      }
+    }
+  }
 }
