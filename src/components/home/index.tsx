@@ -13,7 +13,7 @@ export const Home = () => {
   return (
     <>
       <div className="header"></div>
-      <div className="content">
+      <div className="conteudo">
           <Contatos idContato={contatoId}/>
           <Menssagens id={id}/>
       </div>

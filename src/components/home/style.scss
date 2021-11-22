@@ -5,9 +5,9 @@ $green: rgb(0, 150, 136);
     height: 9em;
 }
 
-.content{
+.conteudo {
     display: flex;
-    width: 70%;
-    
+    flex-direction: row;
+    height: 700px;
     margin: -7.8em auto;
 }
