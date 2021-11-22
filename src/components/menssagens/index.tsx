@@ -1,12 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { MoreVert, Search } from "@material-ui/icons";
+import { MoreVert, Search, Mood, AttachFile } from "@material-ui/icons";
 
 import Profile from "../../assets/michael.png";
 import { Menssagem } from "../../models/menssagem";
 import "./style.scss";
 
-export const Menssagens = (props:any) => {
+export const Menssagens = (props: any) => {
   const [menssagens, setMenssagens] = useState<Menssagem[]>([]);
   const data: Menssagem[] = [];
   const id = props.id;
@@ -18,7 +18,7 @@ export const Menssagens = (props:any) => {
           data.push(item);
         }
       });
-      console.log(props.id)
+      console.log(props.id);
       setMenssagens(data);
     });
   }, [id]);
@@ -35,13 +35,23 @@ export const Menssagens = (props:any) => {
             <MoreVert sx={{ fontSize: 25 }} />
           </div>
         </div>
-        <div className="menssagem__todas">
-          {menssagens.map((item) => (
-            <div className="menssagem__witch">
-              <p>{item.conteudo}</p>
-            </div>
-          ))}
+        <div className="menssagem__conteudoo">
+          <div className="menssagem__todas">
+            {menssagens.map((item) => (
+              <div className="menssagem__witch">
+                <p>{item.conteudo}</p>
+              </div>
+            ))}
+          </div>
+         
         </div>
+          
+          <div className="menssagem__enviar">
+            <Mood sx={{ fontSize: 25 }} />
+            <AttachFile sx={{ fontSize: 25 }} />
+            <input type="text" placeholder="Digite uma mensaagem" />
+          </div>
+        
       </div>
     </>
   );
